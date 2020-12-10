@@ -65,11 +65,14 @@ document.addEventListener("keydown", function(event) {
 
   var correspondingPianoKeyElement = document.getElementById(currentKey);
 
+  if (event.repeat) {return;}
+
   if (listOfRelevantKeys.includes(currentKey)) {
     if (correspondingPianoKeyElement.classList.contains("white-key")) {
       correspondingPianoKeyElement.classList.add("pressed-white");
 
       playSound(currentKey);
+
     }
     else {
       correspondingPianoKeyElement.classList.add("pressed-black");
