@@ -3,7 +3,7 @@ var selectedTonation = "c4-c6";
 
 function playSound(key) {
 
-  var sound = new Audio("sounds/" + selectedTonation + "/" + key + ".ogg");
+  var sound = new Audio("sounds/" + selectedTonation + "/" + key + ".wav");
 
   sound.play();
 }
@@ -55,9 +55,9 @@ for (var i = 0; i < numberOfBlackKeys; i++) {
 //creating event listeners adjusting the styling of keys when
 //when keyboard key corresponding to a given piano key is pressed and released
 
-var listOfRelevantKeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-",
- "=", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "a", "s", "d",
- "f", "g", "h", "j", "k", "l", ";", "'", "Enter"];
+var listOfRelevantKeys = ["q", "Q", "w", "W", "e", "r", "R", "t", "T", "y", "Y",
+ "u", "i", "I", "o", "O", "p", "a", "A", "s", "S", "d", "D", "f", "g", "G", "h",
+ "H", "j", "k", "K", "l", "L", ";", ":", "'"];
 
 document.addEventListener("keydown", function(event) {
 
