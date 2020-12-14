@@ -1,5 +1,47 @@
+//creating tonation display starting values and vars
 
-var selectedTonation = "c4-c6";
+var selectedTonationNumber = 4;
+
+var selectedTonation = "C" + selectedTonationNumber + "-" + "C" + (selectedTonationNumber + 2);
+
+var tonationDisplay = document.querySelector("#tonation-display");
+
+tonationDisplay.textContent = selectedTonation;
+
+//creating function to refresh and update the tonation and the tonation display
+
+function tonationDisplayRefresh() {
+  selectedTonation = "C" + selectedTonationNumber + "-" + "C" + (selectedTonationNumber + 2);
+
+  tonationDisplay.textContent = selectedTonation;
+}
+
+//creating tonation display logic - event listener on tonation control container
+
+var tonationToggleContainer = document.querySelector("#tonation-control");
+
+tonationToggleContainer.addEventListener("click", function(event) {
+
+  var buttonPressed = event.target;
+
+  if (event.target.id == "tonation-down") {
+    if (selectedTonationNumber > 3) {
+      selectedTonationNumber -= 1;
+
+      tonationDisplayRefresh();
+    }
+  }
+  else if (event.target.id == "tonation-up") {
+    if (selectedTonationNumber < 4) {
+      selectedTonationNumber += 1;
+
+      tonationDisplayRefresh()
+    }
+  }
+});
+
+//creating the function that selects the appropriate sound file and plays it
+//when event triggered
 
 function playSound(key) {
 
