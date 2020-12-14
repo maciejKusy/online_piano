@@ -60,73 +60,14 @@ body {
   border-top: none;
   border-radius: 0 0 4px 4px;
   height: 70%;
-  width: 2%;
-  position: absolute;
-  top: -0.5%;
+  width: 40%;
+  position: relative;
+  top: -1%;
+  left: +80%;
 }
 
 .black-key:hover {
   cursor: pointer;
-}
-
-.b0 {
-  left: 3.60%;
-}
-
-.b1 {
-  left: 8.35%;
-}
-
-.b2 {
-  left: 17.85%;
-}
-
-.b3 {
-  left: 22.6%;
-}
-
-.b4 {
-  left: 27.53%;
-}
-
-.b5 {
-  left: 36.85%;
-}
-
-.b6 {
-  left: 41.6%;
-}
-
-.b7 {
-  left: 51.1%;
-}
-
-.b8 {
-  left: 55.85%;
-}
-
-.b9 {
-  left: 60.6%;
-}
-
-.b10 {
-  left: 70.1%;
-}
-
-.b11 {
-  left: 74.85%;
-}
-
-.b12 {
-  left: 84.35%;
-}
-
-.b13 {
-  left: 89.1%;
-}
-
-.b14 {
-  left: 93.85%;
 }
 
 .pressed-white {
