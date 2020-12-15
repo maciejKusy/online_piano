@@ -37,11 +37,6 @@ body {
   position: relative;
 }
 
-.sound {
-  color: transparent;
-  font-size: 0.001em;
-}
-
 .sound:hover {
   cursor: pointer;
 }
