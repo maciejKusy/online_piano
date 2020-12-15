@@ -83,7 +83,9 @@ for (var i = 0; i < numberOfBlackKeys; i++) {
 
   var currentBlackKey = listOfBlackKeys[i];
 
-  currentBlackKey.addEventListener("mousedown", function() {
+  currentBlackKey.addEventListener("mousedown", function(event) {
+    event.stopPropagation();
+
     this.classList.add("pressed-black");
 
     playSound(this.id);
