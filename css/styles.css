@@ -1,7 +1,14 @@
 body {
   background-color: #0a0d0f;
   height: 100%;
-  padding-top: 10em;
+  padding-top: 1.5em;
+  text-align: center;
+}
+
+h1 {
+  color: #e6ccff;
+  font-family: 'Niconne', cursive;
+  font-size: 5em;
 }
 
 .shadow {
