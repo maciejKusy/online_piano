@@ -64,7 +64,7 @@ for (var i = 0; i < numberOfWhiteKeys; i++) {
   currentWhiteKey.addEventListener("mousedown", function() {
     this.classList.add("pressed-white");
 
-    playSound(this.id);
+    playSound(this.dataset.key);
   });
 
   currentWhiteKey.addEventListener("mouseup", function() {
@@ -88,7 +88,7 @@ for (var i = 0; i < numberOfBlackKeys; i++) {
 
     this.classList.add("pressed-black");
 
-    playSound(this.id);
+    playSound(this.dataset.key);
   });
 
   currentBlackKey.addEventListener("mouseup", function() {
@@ -107,7 +107,7 @@ document.addEventListener("keydown", function(event) {
 
   var currentKey = event.key;
 
-  var correspondingPianoKeyElement = document.getElementById(currentKey);
+  var correspondingPianoKeyElement = document.querySelector(`[data-key="${currentKey}"]`);
 
   if (event.repeat) {return;}
 
@@ -130,7 +130,7 @@ document.addEventListener("keyup", function(event) {
 
   var currentKey = event.key;
 
-  var correspondingPianoKeyElement = document.getElementById(currentKey);
+  var correspondingPianoKeyElement = document.querySelector(`[data-key="${currentKey}"]`);
 
   if (listOfRelevantKeys.includes(currentKey)) {
     if (correspondingPianoKeyElement.classList.contains("white-key")) {
