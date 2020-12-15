@@ -66,13 +66,26 @@
     currentWhiteKey.addEventListener("mousedown", function() {
       this.classList.add("pressed-white");
 
+      this.setAttribute("data-clicked", true);
+
       playSound(this.dataset.key);
     });
-
-    currentWhiteKey.addEventListener("mouseup", function() {
-      this.classList.remove("pressed-white");
-    });
   }
+
+
+  document.addEventListener("mouseup", function() {
+    if (document.querySelectorAll('[data-clicked=true]').length > 0) {
+      var keyCurrentlyClicked = document.querySelector('[data-clicked=true]');
+
+      keyCurrentlyClicked.setAttribute("data-clicked", false);
+
+      if (keyCurrentlyClicked.classList.contains("white-key")) {
+        keyCurrentlyClicked.classList.remove("pressed-white");
+      } else {
+        keyCurrentlyClicked.classList.remove("pressed-black");
+      }
+    }
+  });
 
   //creating the loop adding event listener adjusting black keys styling
   //when clicked
@@ -90,11 +103,9 @@
 
       this.classList.add("pressed-black");
 
-      playSound(this.dataset.key);
-    });
+      this.setAttribute("data-clicked", true);
 
-    currentBlackKey.addEventListener("mouseup", function() {
-      this.classList.remove("pressed-black");
+      playSound(this.dataset.key);
     });
   }
 
