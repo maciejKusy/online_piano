@@ -4,7 +4,13 @@
 
   var selectedTonationNumber = 4;
 
-  var selectedTonation = "C" + selectedTonationNumber + "-" + "C" + (selectedTonationNumber + 2);
+  var selectedTonation = null;
+
+  function defineTonation() {
+    selectedTonation = "C" + selectedTonationNumber + "-" + "C" + (selectedTonationNumber + 2);
+  }
+
+  defineTonation();
 
   var tonationDisplay = document.querySelector("#tonation-display");
 
@@ -13,7 +19,7 @@
   //creating function to refresh and update the tonation and the tonation display
 
   function tonationDisplayRefresh() {
-    selectedTonation = "C" + selectedTonationNumber + "-" + "C" + (selectedTonationNumber + 2);
+    defineTonation();
 
     tonationDisplay.textContent = selectedTonation;
   }
@@ -112,10 +118,6 @@
   //creating event listeners adjusting the styling of keys when
   //when keyboard key corresponding to a given piano key is pressed and released
 
-  var listOfRelevantKeys = ["q", "Q", "w", "W", "e", "r", "R", "t", "T", "y", "Y",
-   "u", "i", "I", "o", "O", "p", "a", "A", "s", "S", "d", "D", "f", "g", "G", "h",
-   "H", "j", "k", "K", "l", "L", ";", ":", "'"];
-
   document.addEventListener("keydown", function(event) {
 
     var currentKey = event.key;
@@ -124,7 +126,7 @@
 
     if (event.repeat) {return;}
 
-    if (listOfRelevantKeys.includes(currentKey)) {
+    if (correspondingPianoKeyElement) {
       if (correspondingPianoKeyElement.classList.contains("white-key")) {
         correspondingPianoKeyElement.classList.add("pressed-white");
 
@@ -145,7 +147,7 @@
 
     var correspondingPianoKeyElement = document.querySelector(`[data-key="${currentKey}"]`);
 
-    if (listOfRelevantKeys.includes(currentKey)) {
+    if (correspondingPianoKeyElement) {
       if (correspondingPianoKeyElement.classList.contains("white-key")) {
         correspondingPianoKeyElement.classList.remove("pressed-white");
       }
